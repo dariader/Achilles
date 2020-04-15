@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 #file="/media/daria_der/linuxdata/neisseria_virulence/W_sg/BIGSdb_028077_1580937472_69979.xmfa"
 #xmfa="/media/daria_der/linuxdata/neisseria_virulence/pen_res/BIGSdb_014516_1582581087_34991_core.xmfa"
-xmfa="/media/daria_der/linuxdata/neisseria_virulence/pen_res/abres_core.xmfa"
+#xmfa="/media/daria_der/linuxdata/neisseria_virulence/pen_res/abres_core.xmfa"
+xmfa="/media/daria_der/linuxdata/neisseria_phylogeny/w_sg_two_clades/BIGSdb_115249_1585677600_11976.xmfa"
 sed 's/-//g' $xmfa| sed 's/ + /___/g' > "$xmfa"_edited
 /home/daria_der/Downloads/Soft/faTrans "$xmfa"_edited "$xmfa"_translated
 file="$xmfa"_translated
+expected_number_of_samples="13"
 
 
 ```
@@ -12,7 +14,6 @@ file="$xmfa"_translated
 ```
 #linearize fasta
 
-expected_number_of_samples="647"
 
 linearized_fasta=$(cat $file|sed '/^>/ s/$/;/'|sed ':a;N;$!ba;s/\n//g' | sed 's/>/\n>/g'| sed 's/+/_/g'| sed 's/ //g')
 #proteins=$(cat $file| grep ">"|awk '{print $3}'|sort -u) ## list of proteins to grep
