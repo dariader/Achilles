@@ -1,13 +1,17 @@
 # Achilles
-Association rule mining and classification on genome features
+### Association rule mining and classification on genome features
 
-[+] fasta-2-table parser
+#### ARM todo list: 
 
-[+] table filter
+fasta-2-table parser (done)
 
-[] k-mer parser \\
+table filter (done)
 
-Directories descriptions:
+k-mer parser
+
+### NGS analysis scripts
+#### Directories descriptions:
 
 NameR -- R scripts and bash pipelines for data visualisation and processing. 
+
 ARM -- some trials in rule mining
